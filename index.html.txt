@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Baloo | The Guardian Companion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a2a44;
+            --accent: #4a90e2;
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --bg-soft: #f9f9fb;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-soft);
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .badge {
+            background: var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 { font-size: 3.5rem; margin: 20px 0; }
+        h2 { font-size: 2.2rem; color: var(--primary); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .image-placeholder {
+            background: #ddd;
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        .philosophy-section {
+            background: #fff;
+            padding: 80px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .tech-specs {
+            background: var(--primary);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .tech-specs h2 { color: white; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <span class="badge">Active Research Project</span>
+            <h1>Project Baloo</h1>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                A ride-on robotic mentor designed at the intersection of <strong>Logic</strong> and <strong>Empathy</strong>. 
+                Built for the "Torn but Functional" realities of childhood.
+            </p>
+            <a href="#contact" class="btn">Inquire for Partnership</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="image-placeholder">
+            [Insert Lucid-Origin Panda Render Here]
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-shield-heart fa-2x" style="color:var(--accent)"></i>
+                <h3>The Guardian Persona</h3>
+                <p>Inspired by the protective nature of Bagheera and Baloo, this companion uses warm voice interaction and on-device NLP to provide a safe, mentor-like presence for children aged 3-7.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-robot fa-2x" style="color:var(--accent)"></i>
+                <h3>Phygital Integration</h3>
+                <p>A minimalist 1.5" OLED 'watch' interface embedded in the neck provides digital feedback without the distractions of a tablet, keeping the focus on physical, creative play.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-hammer fa-2x" style="color:var(--accent)"></i>
+                <h3>Resilient by Design</h3>
+                <p>Features a high-strength internal exoskeleton. Even if the plush skin is torn or removed for washing, the robot remains fully functional and aesthetically mechanical.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy-section">
+        <div class="container">
+            <h2>The "Torn but Functional" Philosophy</h2>
+            <p>Most high-tech toys are fragile glass-and-plastic "bricks" waiting to happen. As an <strong>IIT Delhi</strong> Master of Design, Prabhakar Kumar approached this challenge by decoupling the <strong>aesthetic skin</strong> from the <strong>functional soul</strong>. This ensures longevity, washability, and a toy that grows with the child's imagination rather than breaking under it.</p>
+        </div>
+    </section>
+
+    <section class="tech-specs">
+        <div class="container">
+            <h2>Internal Architecture</h2>
+            <div class="image-placeholder" style="background: rgba(255,255,255,0.1); color: white;">
+                [Insert Brain-in-Head Internal Diagram Here]
+            </div>
+            <div class="grid">
+                <div>
+                    <h4><i class="fas fa-brain"></i> Edge-AI Compute</h4>
+                    <p>Raspberry Pi 5 / ESP32-S3 architecture handling all voice and vision processing locally for 100% privacy compliance.</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-bolt"></i> Power & Safety</h4>
+                    <p>Central 24V LFP battery pack with a low center of gravity. Features a rear-access charging interlock system for total safety.</p>
+                </div>
+                <div>
+                    <h4><i class="fas fa-eye"></i> Guardian Sensors</h4>
+                    <p>360° ultrasonic proximity sensors and active braking ensure the robot never misses a step or hits an obstacle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" id="contact">
+            <p>Project Baloo is a multidisciplinary initiative by <strong>Prabhakar Kumar</strong>.</p>
+            <p>Leveraging 8+ years of UX expertise in IoT, Healthcare, and Enterprise Design.</p>
+            <p>&copy; 2026 Advanced Robotics & Home Utility Pillar</p>
+        </div>
+    </footer>
+
+</body>
+</html>
