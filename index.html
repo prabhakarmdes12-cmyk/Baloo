@@ -13,111 +13,114 @@
         .text-glow { text-shadow: 0 0 20px rgba(0, 242, 255, 0.5); }
         .section-padding { padding: 80px 24px; }
         
-        /* Fixed Aspect Ratio for Renders */
-        .img-container { position: relative; width: 100%; padding-top: 75%; overflow: hidden; border-radius: 24px; }
-        .img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        /* Ensures all images fit the design grid perfectly */
+        .img-container { position: relative; width: 100%; overflow: hidden; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); }
+        .img-container img { width: 100%; height: auto; display: block; }
+        
+        .floating { animation: floating 4s ease-in-out infinite; }
+        @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
     <nav class="fixed w-full z-50 p-4">
         <div class="max-w-6xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
             <div class="font-bold tracking-widest text-xl">BALOO<span class="text-cyan-400 italic">_AI</span></div>
             <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest">
                 <a href="#parent" class="hover:text-cyan-400">Parents</a>
-                <a href="#investor" class="hover:text-cyan-400">Investors</a>
                 <a href="#tech" class="hover:text-cyan-400">Tech</a>
+                <a href="#investor" class="hover:text-cyan-400">Investors</a>
             </div>
             <a href="#order" class="bg-cyan-500 text-black px-4 py-2 rounded-lg text-xs font-bold">PRE-ORDER</a>
         </div>
     </nav>
 
-    <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
-        <h1 class="text-6xl md:text-9xl font-black tracking-tighter mb-4 text-glow">BEAST<span class="text-cyan-400">_FRIEND</span></h1>
-        <p class="max-w-xl text-gray-400 mb-8 text-lg">The world's first ride-on robot that talks, protects, and goes on adventures with you. No screens. Just magic.</p>
-        <div class="max-w-4xl w-full img-container border border-cyan-500/20 shadow-2xl shadow-cyan-500/10">
-            <img src="images/hero-panda.jpg" alt="Baloo Hero Panda">
+    <header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24 pb-12">
+        <div class="inline-block px-4 py-1 mb-6 border border-blue-500/30 rounded-full text-blue-400 text-[10px] font-bold tracking-widest uppercase bg-blue-500/10">
+            IIT Delhi Design Pedigree
+        </div>
+        <h1 class="text-5xl md:text-8xl font-black tracking-tighter mb-6 text-glow">PLAY<span class="text-cyan-400">_EVOLVED</span></h1>
+        <p class="max-w-xl text-gray-400 mb-10 text-base md:text-lg">The world's first ride-on robot that talks, protects, and mentors. No screens. Just pure interaction.</p>
+        <div class="max-w-3xl w-full floating">
+            <div class="img-container shadow-2xl shadow-cyan-500/10">
+                <img src="images/hero-panda.jpg" alt="Baloo Hero Panda">
+            </div>
         </div>
     </header>
 
-    <section id="parent" class="section-padding max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <span class="text-cyan-400 font-bold uppercase tracking-widest text-xs">For Parents</span>
-            <h2 class="text-4xl font-bold mt-2 mb-6">"Torn, but Functional"</h2>
-            <div class="space-y-6 text-gray-400">
-                <p>We know the pain of expensive toys breaking. Baloo is built with a <strong>Modular Soul</strong>. The soft plush exterior is separate from the rugged internal skeleton.</p>
-                <ul class="space-y-3">
-                    <li class="flex gap-3 items-start"><span class="text-cyan-400">✔</span> <strong>Machine Washable:</strong> Zip off the skin and toss it in the laundry.</li>
-                    <li class="flex gap-3 items-start"><span class="text-cyan-400">✔</span> <strong>Active Braking:</strong> Ultrasonic sensors stop Baloo before a wall or stairs.</li>
-                    <li class="flex gap-3 items-start"><span class="text-cyan-400">✔</span> <strong>Zero Cloud:</strong> All AI processing stays local. No data leaves your home.</li>
+    <section id="tech" class="section-padding bg-white/5">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <div class="img-container">
+                    <img src="images/skeleton-diagram.jpg" alt="Skeleton View Diagram">
+                </div>
+            </div>
+            <div class="order-1 md:order-2 space-y-8">
+                <h2 class="text-4xl font-bold italic">The Anatomy of <span class="text-cyan-400">Guardian.</span></h2>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-cyan-500 pl-6">
+                        <h4 class="font-bold text-lg">Brain-in-Head Design</h4>
+                        <p class="text-sm text-gray-400">By elevating the compute unit, we protect the electronics from floor impacts and optimize thermal cooling.</p>
+                    </div>
+                    <div class="border-l-4 border-gray-700 pl-6">
+                        <h4 class="font-bold text-lg">Central Stability</h4>
+                        <p class="text-sm text-gray-400">Low-mounted LFP batteries and 4WD hub motors ensure a near-zero tip-over risk during rides.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parent" class="section-padding max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-8 italic">"Torn, but <span class="text-cyan-400">Functional.</span>"</h2>
+                <p class="text-gray-400 text-lg mb-6">Inspired by the childhood reality that toys get loved hard. We decoupled the skin from the soul.</p>
+                <ul class="space-y-4">
+                    <li class="flex gap-4"><span class="bg-cyan-500/20 text-cyan-400 p-1 rounded">✔</span> <strong>Safe-Skin:</strong> Washable and replaceable modular exteriors.</li>
+                    <li class="flex gap-4"><span class="bg-cyan-500/20 text-cyan-400 p-1 rounded">✔</span> <strong>Edge-Privacy:</strong> Zero cloud dependency. No data eavesdropping.</li>
+                    <li class="flex gap-4"><span class="bg-cyan-500/20 text-cyan-400 p-1 rounded">✔</span> <strong>Active Braking:</strong> Proximity sensors for cliff and obstacle detection.</li>
                 </ul>
             </div>
-        </div>
-        <div class="img-container">
-            <img src="images/concept-soft.jpg" alt="Soft interaction">
+            <div class="img-container">
+                <img src="images/concept-soft.jpg" alt="Soft touch and feel">
+            </div>
         </div>
     </section>
 
-    <section id="investor" class="section-padding bg-white/5">
+    <section id="investor" class="section-padding bg-black border-y border-white/5">
         <div class="max-w-6xl mx-auto text-center mb-16">
-            <h2 class="text-4xl font-bold">The Investment Logic</h2>
-            <p class="text-gray-400 mt-4">Solving the $35B Smart Toy market with IIT Delhi Design Pedigree.</p>
+            <h2 class="text-4xl font-bold tracking-tight">Investment Thesis</h2>
+            <div class="h-1 w-20 bg-cyan-500 mx-auto mt-4"></div>
         </div>
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-            <div class="glass p-8 rounded-3xl">
-                <h3 class="text-xl font-bold mb-4">Unfair Advantage</h3>
-                <p class="text-sm text-gray-400">Leveraging 8+ years of UX expertise from Orry and LXRGuide to create a friction-less parent app and high-engagement HRI.</p>
+            <div class="glass p-10 rounded-[32px] hover:border-cyan-500 transition">
+                <h3 class="text-xl font-bold mb-4 text-cyan-400">High LTV</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Revenue isn't just hardware. Modular skins and "Story-Walk" software updates create a high lifetime value per customer.</p>
             </div>
-            <div class="glass p-8 rounded-3xl">
-                <h3 class="text-xl font-bold mb-4">Recurring Revenue</h3>
-                <p class="text-sm text-gray-400">Modular "Skins" and subscription-based "Story-Walks" create a long-term LTV far beyond the initial hardware purchase.</p>
+            <div class="glass p-10 rounded-[32px] hover:border-cyan-500 transition">
+                <h3 class="text-xl font-bold mb-4 text-cyan-400">HRI Leadership</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Proprietary Human-Robot Interaction models that prioritize emotional bonding without screen-dependency.</p>
             </div>
-            <div class="glass p-8 rounded-3xl">
-                <h3 class="text-xl font-bold mb-4">Scalable Platform</h3>
-                <p class="text-sm text-gray-400">The internal "Skeleton" is a patent-pending platform that can be licensed for Disney, Marvel, or original IP characters.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="tech" class="section-padding max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold italic">Inside the Guardian.</h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="img-container border border-white/10">
-                <img src="images/skeleton-diagram.png" alt="Skeleton Internal View">
-            </div>
-            <div class="space-y-8">
-                <div class="border-l-2 border-cyan-500 pl-6">
-                    <h4 class="font-bold">Elevated Compute (The Brain)</h4>
-                    <p class="text-sm text-gray-400 mt-1">Raspberry Pi 5 / ESP32-S3 mounted in the head for better thermal management and impact protection.</p>
-                </div>
-                <div class="border-l-2 border-gray-700 pl-6">
-                    <h4 class="font-bold">4WD Hub Motors</h4>
-                    <p class="text-sm text-gray-400 mt-1">High-torque motors located low for a stable center of gravity, preventing tip-overs.</p>
-                </div>
-                <div class="border-l-2 border-gray-700 pl-6">
-                    <h4 class="font-bold">Privacy-First Edge AI</h4>
-                    <p class="text-sm text-gray-400 mt-1">On-device NLP means Baloo hears and speaks without an internet connection.</p>
-                </div>
+            <div class="glass p-10 rounded-[32px] hover:border-cyan-500 transition">
+                <h3 class="text-xl font-bold mb-4 text-cyan-400">Strategic IP</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">A scalable internal platform ready for licensing with global character-based entertainment giants.</p>
             </div>
         </div>
     </section>
 
     <section id="order" class="section-padding">
-        <div class="max-w-4xl mx-auto glass p-12 md:p-24 rounded-[48px] text-center border-cyan-500/20 shadow-2xl shadow-cyan-500/5">
-            <h2 class="text-5xl font-bold mb-6 italic">Secure the Future.</h2>
-            <p class="text-gray-400 mb-10 text-lg">Whether you are an investor looking for the next giant leap in HRI or a parent wanting the best for your child—Baloo is ready.</p>
+        <div class="max-w-4xl mx-auto glass p-12 md:p-20 rounded-[50px] text-center">
+            <h2 class="text-4xl md:text-6xl font-black mb-8">Ready for the <br>Alpha Release?</h2>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="mailto:prabhakarmdes12@gmail.com" class="bg-cyan-500 text-black px-12 py-4 rounded-2xl font-bold hover:scale-105 transition">INVESTOR INQUIRY</a>
-                <a href="#" class="bg-white/10 px-12 py-4 rounded-2xl font-bold hover:bg-white/20 transition">ALPHA PRE-ORDER</a>
+                <a href="mailto:prabhakarmdes12@gmail.com" class="bg-cyan-500 text-black px-12 py-4 rounded-2xl font-bold">Invest Now</a>
+                <a href="#" class="bg-white/10 px-12 py-4 rounded-2xl font-bold">Pre-Order</a>
             </div>
-            <p class="mt-8 text-[10px] text-gray-600 tracking-[0.4em] uppercase">Master of Design | IIT Delhi | 2026</p>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center text-gray-600 text-xs">
-        &copy; 2026 Advanced Robotics Pillar. All Rights Reserved.
+    <footer class="py-12 text-center text-gray-600 text-[10px] uppercase tracking-[0.5em]">
+        PRABHAKAR KUMAR | IIT DELHI M.DES | 2026 ROBOTICS
     </footer>
 
 </body>
